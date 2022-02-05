@@ -1,0 +1,7 @@
+closed_menu_icon:
+  default: '<svg width="43" height="22" viewBox="0 0 43 22" class="svg-icon svg-node open-menu" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="43" height="6" rx="3" fill="defaultColor"/><rect y="16" width="43" height="6" rx="3" fill="defaultColor"/></svg>'
+  description: "Icon to display when menu is closed"
+open_menu_icon:
+  default: '<svg width="30" height="30" viewBox="0 0 30 30" class="svg-icon svg-node close-menu" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.303223" y="26.0605" width="36.8553" height="5.14259" rx="2.5713" transform="rotate(-45 0.303223 26.0605)" fill="defaultColor"/><rect x="3.63623" y="0.302734" width="36.8553" height="5.1426" rx="2.5713" transform="rotate(45 3.63623 0.302734)" fill="defaultColor"/></svg>'
+  description: "Icon to display when menu is open"
+  
