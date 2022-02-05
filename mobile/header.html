@@ -1,0 +1,28 @@
+<script type="text/discourse-plugin" version="0.8">
+  api.onPageChange(() => {
+    const $toggle = $('.above-site-header-outlet.brand-header .header-dropdown-toggle');
+    const toggler = function(isClosed) {
+        const $newIcon = isClosed ?
+            '<svg width="43" height="22" viewBox="0 0 43 22" class="svg-icon svg-node open-menu" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="43" height="6" rx="3" fill="defaultColor"/><rect y="16" width="43" height="6" rx="3" fill="defaultColor"/></svg>' :
+            '<svg width="30" height="30" viewBox="0 0 30 30" class="svg-icon svg-node close-menu" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.303223" y="26.0605" width="36.8553" height="5.14259" rx="2.5713" transform="rotate(-45 0.303223 26.0605)" fill="defaultColor"/><rect x="3.63623" y="0.302734" width="36.8553" height="5.1426" rx="2.5713" transform="rotate(45 3.63623 0.302734)" fill="defaultColor"/></svg>'
+
+        const $icon = $('.above-site-header-outlet.brand-header .header-dropdown-toggle a')
+        
+        $icon.html($newIcon)
+    }
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        const $target = $(mutation.target);
+        const attributeValue = $target.prop(mutation.attributeName);
+        
+        toggler(attributeValue.indexOf('active') < 0);
+      });
+    });
+    
+    toggler(true);
+    observer.observe($toggle[0], {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+</script>
