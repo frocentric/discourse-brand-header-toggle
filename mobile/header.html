@@ -1,0 +1,25 @@
+<script type="text/discourse-plugin" version="0.8">
+  api.onPageChange(() => {
+    const $toggle = $('.above-site-header-outlet.brand-header .header-dropdown-toggle');
+    const toggler = function(isClosed) {
+        const $newIcon = isClosed ? settings.closed_menu_icon : settings.open_menu_icon;
+        const $icon = $('.above-site-header-outlet.brand-header .header-dropdown-toggle a');
+        
+        $icon.html($newIcon);
+    }
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        const $target = $(mutation.target);
+        const attributeValue = $target.prop(mutation.attributeName);
+        
+        toggler(attributeValue.indexOf('active') < 0);
+      });
+    });
+    
+    toggler(true);
+    observer.observe($toggle[0], {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  });
+</script>
