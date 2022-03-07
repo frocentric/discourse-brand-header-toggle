@@ -1,0 +1,31 @@
+.b-header .contents {
+  ul.icons {
+    li.header-dropdown-toggle {
+      margin-right: 10px;
+      margin-top: 19px;
+
+      svg {
+        width: 43px;
+        height: 22px;
+      }
+
+      &.active {
+        margin-right: 4px;
+        margin-top: 15px;
+        svg {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .hamburger-panel {
+      .menu-panel hr {
+          display: none;
+      }
+  }
+}
+
+#toggle-hamburger-brand-menu {
+  width: 43px;
+}
